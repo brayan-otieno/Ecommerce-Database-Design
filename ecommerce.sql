@@ -8,9 +8,45 @@ CREATE TABLE brand (
     name VARCHAR(100) NOT NULL UNIQUE,
     description TEXT
 );
--- 8. product_item
+-- 2. product_category table
+CREATE TABLE product_category (
+    category_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+-- 4. product_image table
+CREATE TABLE product_image (
+    image_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    image_url VARCHAR(255) NOT NULL,
+    alt_text VARCHAR(255),
+    is_primary BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (product_id) REFERENCES product(product_id)
+);
+
+-- 8. product_variation table
+CREATE TABLE product_variation (
+    variation_id INT AUTO_INCREMENT PRIMARY KEY,
+    product_id INT NOT NULL,
+    color_id INT,
+    size_option_id INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    
+    FOREIGN KEY (product_id) REFERENCES product(product_id),
+    FOREIGN KEY (color_id) REFERENCES color(color_id),
+    FOREIGN KEY (size_option_id) REFERENCES size_option(size_option_id)
+);
+
+-- 9. product_item
 CREATE TABLE product_item (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    product_item_id INT AUTO_INCREMENT PRIMARY KEY,
     product_id INT NOT NULL,
     product_variation_id INT NOT NULL,
     sku VARCHAR(100) UNIQUE NOT NULL,
@@ -19,12 +55,12 @@ CREATE TABLE product_item (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
 
-    FOREIGN KEY (product_id) REFERENCES product(id),
-    FOREIGN KEY (product_variation_id) REFERENCES product_variation(id)
+    FOREIGN KEY (product_id) REFERENCES product(product_id),
+    FOREIGN KEY (variation_id) REFERENCES product_variation(variation_id)
 );
 -- 11.attribute_type
 CREATE TABLE attribute_type (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    attribute_type_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL UNIQUE,      -- e.g., 'Text', 'Number', 'Boolean'
     description TEXT                       -- optional description of the type
 );
