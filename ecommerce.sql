@@ -8,6 +8,14 @@ CREATE TABLE brand (
     name VARCHAR(100) NOT NULL UNIQUE,
     description TEXT
 );
+
+-- 2. Colour Table
+CREATE TABLE color (
+    color_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE,
+    hex_value CHAR(7) NOT NULL
+);
+
 -- 3. product_category table
 CREATE TABLE product_category (
     category_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -16,12 +24,29 @@ CREATE TABLE product_category (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
+
+-- 4. size_category table
+CREATE TABLE size_category (
+    size_category_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE
+);
+
+-- 5. size_option table
+CREATE TABLE size_option (
+    size_option_id INT AUTO_INCREMENT PRIMARY KEY,
+    size_category_id INT NOT NULL,
+    value VARCHAR(20) NOT NULL,
+    
+    FOREIGN KEY (size_category_id) REFERENCES size_category(size_category_id)
+);
+
 -- 6.attribute_type
 CREATE TABLE attribute_type (
     attribute_type_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(50) NOT NULL UNIQUE,      -- e.g., 'Text', 'Number', 'Boolean'
     description TEXT                       -- optional description of the type
 );
+
 
 -- 9. product_image table
 CREATE TABLE product_image (
