@@ -5,9 +5,9 @@
 - Built by a peer group to learn and practice professional database design principles.
 
 ## 📁 Project Contents
-- ✅ **ERD Diagram** – Entity Relationship Diagram representing all tables and their relationships.
+- ✅ **ERD Diagram** – Entity Relationship Diagram representing all tables and their relationships.(`e-commerce database ERD.drawio.pdf`)
 - ✅ **SQL Script** – Complete schema with table creation and constraints (`ecommerce.sql`).
-- ✅ **Data Flow Documentation** – Outlines how data flows between tables (`ecommerce_data_flow_documentation.txt`).
+- ✅ **Data Flow Documentation** – Outlines how data flows between tables (`e-commerce_table_definitions.pdf`).
 
 ## 🧱 Core Tables
 - `product`
@@ -29,8 +29,9 @@
 3. Explore the ERD and data flow documentation for understanding.
 
 ## 📂 Repository Structure
-- ecommerce.sql.
+- README.md.
 - e-commerce database ERD.drawio.pdf.
+- ecommerce.sql.
 - e-commerce_table_definitions.pdf.
 
 ## 🧪 Testing & Validation
