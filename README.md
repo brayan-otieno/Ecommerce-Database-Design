@@ -30,8 +30,8 @@
 
 ## 📂 Repository Structure
 -ecommerce.sql
--ecommerce_data_flow_documentation.txt
--ERD_Diadram.pdf
+-e-commerce_database_ERD.drawio.pdf
+-e-commerce_table_definitions.pdf
 
 ## 🧪 Testing & Validation
 - Tested in MySQL Workbench.
