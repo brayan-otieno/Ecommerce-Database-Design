@@ -30,8 +30,8 @@
 
 ## 📂 Repository Structure
 -ecommerce.sql.
--e-commerce_database_ERD.drawio.pdf.
--e-commerce_table_definitions.pdf.
+-e-commerce database ERD.drawio.pdf.
+-e-commerce table definitions.pdf.
 
 ## 🧪 Testing & Validation
 - Tested in MySQL Workbench.
