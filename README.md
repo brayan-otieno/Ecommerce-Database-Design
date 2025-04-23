@@ -29,9 +29,9 @@
 3. Explore the ERD and data flow documentation for understanding.
 
 ## 📂 Repository Structure
--ecommerce.sql
--e-commerce_database_ERD.drawio.pdf
--e-commerce_table_definitions.pdf
+-ecommerce.sql.
+-e-commerce_database_ERD.drawio.pdf.
+-e-commerce_table_definitions.pdf.
 
 ## 🧪 Testing & Validation
 - Tested in MySQL Workbench.
