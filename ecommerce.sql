@@ -1,3 +1,7 @@
+-- create ecommerce database if it does not exist
+CREATE DATABASE IF NOT EXISTS ecommerce;
+USE ecommerce;
+
 -- 1. brand
 CREATE TABLE brand (
     brand_id INT PRIMARY KEY AUTO_INCREMENT,
