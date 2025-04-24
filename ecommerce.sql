@@ -47,6 +47,18 @@ CREATE TABLE attribute_type (
     description TEXT                       -- optional description of the type
 );
 
+--7. product table
+CREATE TABLE IF NOT EXISTS product (
+	product_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150) NOT NULL,
+    brand_id INT NOT NULL,
+    category_id INT NOT NULL,
+    base_price DECIMAL(10, 2) NOT NULL,
+    description TEXT,
+	FOREIGN KEY (category_id) REFERENCES product_category (category_id),
+    FOREIGN KEY (brand_id) REFERENCES brand (brand_id)
+);
+
 
 -- 9. product_image table
 CREATE TABLE product_image (
