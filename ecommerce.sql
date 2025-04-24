@@ -47,6 +47,13 @@ CREATE TABLE attribute_type (
     description TEXT                       -- optional description of the type
 );
 
+-- 7. attribute_category table
+CREATE TABLE attribute_category (
+    attribute_category_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE,
+    description TEXT
+);
+
 --8. product table
 CREATE TABLE IF NOT EXISTS product (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
